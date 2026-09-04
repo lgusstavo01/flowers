@@ -1,23 +1,12 @@
 import React from "react";
 
-// Lista de serviços traduzida para o português
+// Lista de serviços atualizada
 const services = [
   {
-    title: "Plantio de Árvores",
-    description: "Cada projeto e espaço é uma oportunidade perfeita para criar um ambiente único e inspirador.",
+    title: "Buquês",
+    description: "Buquês exclusivos e personalizados, criados com flores frescas selecionadas para surpreender em momentos especiais.",
     bgColor: "bg-red-50",
     iconColor: "text-red-600",
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-      </svg>
-    ),
-  },
-  {
-    title: "Paisagismo Floral",
-    description: "Criamos arranjos e composições florais sob medida para encantar e transformar seu evento ou ambiente.",
-    bgColor: "bg-red-100/70",
-    iconColor: "text-red-700",
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 21a9 9 0 100-18 9 9 0 000 18z M12 8v8 M8 12h8" />
@@ -25,46 +14,24 @@ const services = [
     ),
   },
   {
-    title: "Design de Jardins",
-    description: "Planejamento completo de jardins residenciais e comerciais combinando beleza, funcionalidade e harmonia.",
-    bgColor: "bg-rose-50",
-    iconColor: "text-rose-600",
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 01-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-      </svg>
-    ),
-  },
-  {
-    title: "Cultivo de Plantas",
-    description: "Cuidado especializado no cultivo e manutenção de espécies saudáveis e viçosas para a sua casa.",
-    bgColor: "bg-red-50",
-    iconColor: "text-red-600",
-    icon: (
-      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-      </svg>
-    ),
-  },
-  {
-    title: "Poda de Galhos",
-    description: "Poda preventiva e estética para garantir o crescimento forte e seguro de suas plantas e árvores.",
+    title: "Arranjos",
+    description: "Arranjos florais elegantes e sofisticados, desenhados para harmonizar e trazer vida a qualquer ambiente.",
     bgColor: "bg-red-100/70",
     iconColor: "text-red-700",
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 0L4 4m5.121 5.121L4 14.121" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
       </svg>
     ),
   },
   {
-    title: "Corte de Grama",
-    description: "Manutenção periódica de gramados para manter o visual sempre verde, impecável e bem cuidado.",
+    title: "Eventos",
+    description: "Decoração floral sob medida para transformar casamentos, festas corporativas e celebrações inesquecíveis.",
     bgColor: "bg-rose-50",
     iconColor: "text-rose-600",
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 13l4 4L19 7" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
       </svg>
     ),
   },
@@ -106,7 +73,7 @@ export function ServicesSection() {
         }
       `}</style>
 
-      {/* ================= ELEMENTOS DECORATIVOS EM VERMELHO/ROSA ================= */}
+      {/* ================= ELEMENTOS DECORATIVOS ================= */}
 
       {/* 1. Tulipa Superior Esquerda */}
       <div className="absolute top-8 left-4 md:left-12 pointer-events-none z-0 animate-float-slow opacity-60">
@@ -184,12 +151,12 @@ export function ServicesSection() {
             Nossos <span className="text-red-600">Serviços</span>
           </h2>
           <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-            Oferecemos soluções completas para transformar espaços e momentos especiais com a beleza única das flores e plantas.
+            Oferecemos soluções completas para transformar espaços e momentos especiais com a beleza única das flores.
           </p>
         </div>
 
         {/* Grid dos Cards de Serviço */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((item, index) => (
             <div
               key={index}
@@ -218,7 +185,6 @@ export function ServicesSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 rounded-full bg-red-600 px-8 py-4 text-base md:text-lg font-bold text-white shadow-lg shadow-red-600/30 hover:bg-red-700 hover:shadow-xl hover:shadow-red-700/40 hover:-translate-y-0.5 transition-all duration-300"
           >
-            {/* Ícone do WhatsApp */}
             <svg
               className="w-6 h-6 fill-current"
               viewBox="0 0 24 24"

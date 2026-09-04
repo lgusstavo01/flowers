@@ -1,57 +1,64 @@
 import { useState } from "react";
 
-const categories = ["Todos", "Buquês", "Arranjos", "Cestas", "Eventos"];
+import flor5 from "../assets/img/flor5.jpeg";
+import flor6 from "../assets/img/flor6.jpeg";
+import flor7 from "../assets/img/flor7.jpeg";
+import flor9 from "../assets/img/flor9.jpeg";
+import arranjo1 from "../assets/img/arranjo1.jpeg";
+import arranjo2 from "../assets/img/arranjo2.jpeg";
+
+const categories = ["Todos", "Buquês", "Arranjos", "Cestas"];
 
 const galleryItems = [
   {
     id: 1,
+    title: "Buquê Encanto de Rosas",
     category: "Buquês",
-    title: "Buquê Clássico de Rosas Vermelhas",
-    image: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=600&auto=format&fit=crop",
+    image: flor5,
   },
   {
     id: 2,
-    category: "Arranjos",
-    title: "Arranjo de Mesa em Tons de Rosa",
-    image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=600&auto=format&fit=crop",
+    title: "Buquê Primavera Delicada",
+    category: "Buquês",
+    image: flor6,
   },
   {
     id: 3,
-    category: "Cestas",
-    title: "Cesta Especial Romântica",
-    image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=600&auto=format&fit=crop",
+    title: "Arranjo Floral de Mesa",
+    category: "Arranjos",
+    image: arranjo1,
   },
   {
     id: 4,
-    category: "Buquês",
-    title: "Buquê Mix Flores do Campo",
-    image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=600&auto=format&fit=crop",
+    title: "Arranjo Premium Sofisticado",
+    category: "Arranjos",
+    image: arranjo2,
   },
   {
     id: 5,
-    category: "Eventos",
-    title: "Decoração Floral para Festas",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=600&auto=format&fit=crop",
+    title: "Cesta de Flores & Afeto",
+    category: "Cestas",
+    image: flor7,
   },
   {
     id: 6,
-    category: "Arranjos",
-    title: "Vasos Decorativos com Orquídeas",
-    image: "https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=600&auto=format&fit=crop",
+    title: "Decoração Especial para Eventos",
+    category: "Buquês",
+    image: flor9,
   },
 ];
 
 export function GallerySection() {
   const [activeTab, setActiveTab] = useState("Todos");
 
-  const filteredItems = activeTab === "Todos"
-    ? galleryItems
-    : galleryItems.filter((item) => item.category === activeTab);
+  const filteredItems =
+    activeTab === "Todos"
+      ? galleryItems
+      : galleryItems.filter((item) => item.category === activeTab);
 
   return (
     <section className="bg-white py-20 px-4 lg:py-28">
       <div className="mx-auto max-w-screen-xl text-center">
-        
         {/* Cabeçalho */}
         <div className="max-w-xl mx-auto mb-10">
           <span className="inline-block px-3.5 py-1 mb-3 rounded-full bg-red-50 border border-red-100 text-red-600 text-xs font-bold uppercase tracking-widest">
@@ -104,9 +111,11 @@ export function GallerySection() {
                 <h3 className="text-white text-lg font-serif font-semibold mb-3">
                   {item.title}
                 </h3>
-                
+
                 <a
-                  href={`https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostei%20do%20${encodeURIComponent(item.title)}%20da%20galeria.`}
+                  href={`https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostei%20do%20${encodeURIComponent(
+                    item.title
+                  )}%20da%20galeria.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-xs font-bold text-white bg-red-600 px-4 py-2 rounded-full w-fit hover:bg-red-700 transition"
@@ -120,7 +129,6 @@ export function GallerySection() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

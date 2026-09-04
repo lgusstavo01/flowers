@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logoMinimalista from "../assets/iv/logoMinimalista.jpeg"
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ export function NavBar() {
         {/* Logo da Floricultura */}
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
-            src="https://flowbite.com/docs/images/logo.svg"
+            src={logoMinimalista}
             className="h-8"
             alt="Logo da Floricultura"
           />

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import cardImg from "../assets/iv/card.jpeg";
+import bannerImg from "../assets/iv/banner.jpeg";
 
 export function AboutSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -18,20 +20,20 @@ export function AboutSection() {
         {/* LADO ESQUERDO: Layout de Fotos Sobrepostas + Player de Vídeo */}
         <div className="lg:col-span-6 relative flex justify-center lg:justify-start pb-12 lg:pb-0">
           
-          {/* Foto Principal de Fundo (Dona na floricultura) */}
+          {/* Foto Principal de Fundo */}
           <div className="relative w-4/5 h-80 sm:h-96 rounded-2xl overflow-hidden shadow-lg border-4 border-stone-50">
             <img
-              src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=800&auto=format&fit=crop"
-              alt="Dona da loja cuidando das plantas"
+              src={cardImg}
+              alt="Malu Flores - Arranjos e Decoração"
               className="w-full h-full object-cover"
             />
           </div>
 
-          {/* Foto Sobreposta com Botão de Play (Vídeo sobre a loja) */}
+          {/* Foto Sobreposta com Botão de Play */}
           <div className="absolute -bottom-6 right-2 sm:right-8 w-3/5 h-56 sm:h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 group">
             <img
-              src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=600&auto=format&fit=crop"
-              alt="Apresentação da floricultura"
+              src={bannerImg}
+              alt="Apresentação da Malu Flores"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             
@@ -42,7 +44,7 @@ export function AboutSection() {
             <button
               onClick={() => setIsVideoOpen(true)}
               className="absolute inset-0 m-auto w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-red-600 text-white flex items-center justify-center shadow-xl shadow-red-600/40 hover:bg-red-700 hover:scale-110 transition-all duration-300 focus:outline-none"
-              aria-label="Assistir vídeo da dona da loja"
+              aria-label="Assistir vídeo sobre a Malu Flores"
             >
               <svg className="w-7 h-7 sm:w-8 sm:h-8 fill-current translate-x-0.5" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
@@ -50,7 +52,7 @@ export function AboutSection() {
             </button>
           </div>
 
-          {/* Arco decorativo vermelho (replicando o estilo da foto) */}
+          {/* Arco decorativo vermelho */}
           <div className="absolute -bottom-10 left-6 sm:left-12 w-36 h-36 border-b-4 border-l-4 border-red-500/80 rounded-bl-full -z-10 pointer-events-none" />
         </div>
 
@@ -65,10 +67,10 @@ export function AboutSection() {
           </h2>
 
           <p className="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed">
-            Bem-vindo à nossa floricultura! Crio arranjos únicos que traduzem sentimentos e transformam momentos especiais em memórias inesquecíveis.
+            Bem-vindo à <span className="font-semibold text-gray-900">Malu Flores</span>! Criamos arranjos únicos que traduzem sentimentos e transformam momentos especiais em memórias inesquecíveis.
           </p>
 
-          {/* Lista com ícones idênticos ao layout enviado */}
+          {/* Lista com ícones */}
           <div className="space-y-5 mb-8">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0">
@@ -105,17 +107,16 @@ export function AboutSection() {
           </div>
 
           <p className="text-gray-500 text-sm leading-relaxed border-t border-gray-100 pt-6">
-            Nosso compromisso vai além de vender arranjos: cultivamos experiências e entregamos afeto em forma de flores em toda a região.
+            Nosso compromisso na Malu Flores vai além de vender arranjos: cultivamos experiências e entregamos afeto em forma de flores em toda a região.
           </p>
         </div>
 
       </div>
 
-      {/* MODAL DE VÍDEO (Abre ao clicar no botão de Play) */}
+      {/* MODAL DE VÍDEO */}
       {isVideoOpen && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="relative w-full max-w-3xl bg-black rounded-2xl overflow-hidden shadow-2xl">
-            {/* Botão Fechar Modal */}
             <button
               onClick={() => setIsVideoOpen(false)}
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/40 flex items-center justify-center transition"
@@ -123,11 +124,10 @@ export function AboutSection() {
               ✕
             </button>
             <div className="aspect-video w-full">
-              {/* Substitua a URL pelo vídeo do YouTube/Vimeo da cliente */}
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                title="Vídeo sobre a Floricultura"
+                title="Vídeo sobre a Malu Flores"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />

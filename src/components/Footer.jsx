@@ -1,4 +1,5 @@
 import React from "react";
+import logoMinimalista from "../assets/iv/logoMinimalista.jpeg";
 
 export function Footer() {
   return (
@@ -11,12 +12,12 @@ export function Footer() {
           <div className="space-y-4">
             <a href="#" className="flex items-center space-x-3">
               <img
-                src="https://flowbite.com/docs/images/logo.svg"
-                className="h-8"
-                alt="Logo da Floricultura"
+                src={logoMinimalista}
+                className="h-10 w-auto object-contain rounded-md"
+                alt="Logo Malu Flores"
               />
               <span className="text-2xl font-serif font-bold text-white tracking-wide">
-                Floricultura <span className="text-red-500">Encanto</span>
+                Malu <span className="text-red-500">Flores</span>
               </span>
             </a>
             <p className="text-stone-400 text-sm leading-relaxed">
@@ -25,7 +26,6 @@ export function Footer() {
             
             {/* Redes Sociais */}
             <div className="flex gap-3 pt-2">
-              {/* Instagram */}
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-stone-800 text-stone-300 hover:bg-red-600 hover:text-white flex items-center justify-center transition duration-300 shadow-sm"
@@ -36,7 +36,6 @@ export function Footer() {
                 </svg>
               </a>
 
-              {/* Facebook */}
               <a
                 href="#"
                 className="w-10 h-10 rounded-full bg-stone-800 text-stone-300 hover:bg-red-600 hover:text-white flex items-center justify-center transition duration-300 shadow-sm"
@@ -47,7 +46,6 @@ export function Footer() {
                 </svg>
               </a>
 
-              {/* WhatsApp */}
               <a
                 href="https://wa.me/5500000000000"
                 target="_blank"
@@ -133,7 +131,7 @@ export function Footer() {
                 <svg className="w-5 h-5 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="text-stone-300">contato@floricultura.com.br</span>
+                <span className="text-stone-300">contato@maluflores.com.br</span>
               </li>
             </ul>
           </div>
@@ -142,8 +140,8 @@ export function Footer() {
 
         {/* Linha Divisória & Copyright */}
         <div className="pt-8 border-t border-stone-800 text-center text-xs text-stone-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} Floricultura Encanto. Todos os direitos reservados.</p>
-          <p>Feito com amor ❤️ pelas flores.</p>
+          <p>© {new Date().getFullYear()} Malu Flores. Todos os direitos reservados.</p>
+
         </div>
       </div>
     </footer>
