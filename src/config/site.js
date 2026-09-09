@@ -16,9 +16,11 @@ export const site = {
   contact: {
     phoneDisplay: "(71) 98295-3846",
     email: "contato@maluflores.com.br",
-    address: "Rua das Flores, 123 - Centro",
+    address:
+      "Salvador Norte Shopping - Piso L1, em frente à Melissa - Salvador/BA, 41510-000",
+    // Embed sem chave de API (Google Maps aceita ?q=...&output=embed em iframe).
     mapsEmbedUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975734273295!2d-46.65866868502223!3d-23.561324484682855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr",
+      "https://www.google.com/maps?q=Salvador%20Norte%20Shopping%2C%20Salvador%20-%20BA%2C%2041510-000&z=16&hl=pt-BR&output=embed",
   },
 
   hours: [
