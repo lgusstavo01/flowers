@@ -1,12 +1,12 @@
-import { useState } from "react";
 import cardImg from "../assets/iv/card.jpeg";
 import bannerImg from "../assets/iv/banner.jpeg";
 
 export function AboutSection() {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
-
   return (
-    <section className="relative overflow-hidden bg-white py-20 px-4 lg:py-28">
+    <section
+      id="sobre"
+      className="relative overflow-hidden bg-white py-20 px-4 lg:py-28"
+    >
       {/* Elemento Decorativo no lado direito (Folha gigante suave) */}
       <div className="pointer-events-none absolute top-1/2 -right-16 -translate-y-1/2 opacity-15 text-red-400">
         <svg className="w-72 h-72 md:w-96 md:h-96 fill-current" viewBox="0 0 100 100">
@@ -16,10 +16,10 @@ export function AboutSection() {
       </div>
 
       <div className="mx-auto max-w-screen-xl grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        {/* LADO ESQUERDO: Layout de Fotos Sobrepostas + Player de Vídeo */}
+
+        {/* LADO ESQUERDO: Layout de Fotos Sobrepostas */}
         <div className="lg:col-span-6 relative flex justify-center lg:justify-start pb-12 lg:pb-0">
-          
+
           {/* Foto Principal de Fundo */}
           <div className="relative w-4/5 h-80 sm:h-96 rounded-2xl overflow-hidden shadow-lg border-4 border-stone-50">
             <img
@@ -29,27 +29,16 @@ export function AboutSection() {
             />
           </div>
 
-          {/* Foto Sobreposta com Botão de Play */}
+          {/* Foto Sobreposta */}
           <div className="absolute -bottom-6 right-2 sm:right-8 w-3/5 h-56 sm:h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-stone-100 group">
             <img
               src={bannerImg}
               alt="Apresentação da Malu Flores"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            
-            {/* Overlay com tom vermelho escuro ao passar o mouse */}
-            <div className="absolute inset-0 bg-stone-900/20 group-hover:bg-red-950/30 transition-colors duration-300" />
 
-            {/* Botão de Play */}
-            <button
-              onClick={() => setIsVideoOpen(true)}
-              className="absolute inset-0 m-auto w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-red-600 text-white flex items-center justify-center shadow-xl shadow-red-600/40 hover:bg-red-700 hover:scale-110 transition-all duration-300 focus:outline-none"
-              aria-label="Assistir vídeo sobre a Malu Flores"
-            >
-              <svg className="w-7 h-7 sm:w-8 sm:h-8 fill-current translate-x-0.5" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </button>
+            {/* Overlay com tom vermelho escuro ao passar o mouse */}
+            <div className="absolute inset-0 bg-stone-900/10 group-hover:bg-red-950/20 transition-colors duration-300" />
           </div>
 
           {/* Arco decorativo vermelho */}
@@ -112,29 +101,6 @@ export function AboutSection() {
         </div>
 
       </div>
-
-      {/* MODAL DE VÍDEO */}
-      {isVideoOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="relative w-full max-w-3xl bg-black rounded-2xl overflow-hidden shadow-2xl">
-            <button
-              onClick={() => setIsVideoOpen(false)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/40 flex items-center justify-center transition"
-            >
-              ✕
-            </button>
-            <div className="aspect-video w-full">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                title="Vídeo sobre a Malu Flores"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

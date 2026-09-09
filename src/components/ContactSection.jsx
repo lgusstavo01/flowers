@@ -1,34 +1,11 @@
-import React from "react";
+import { site } from "../config/site";
 
 export function ContactSection() {
   return (
-    <section className="relative overflow-hidden bg-red-50/30 py-20 px-4 lg:py-28">
-      {/* Animações CSS para os ícones decorativos */}
-      <style>{`
-        @keyframes floatSlow {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-22px) rotate(8deg); }
-        }
-        @keyframes floatReverse {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(20px) rotate(-8deg); }
-        }
-        @keyframes spinSlow {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-
-        .animate-float-slow {
-          animation: floatSlow 6s ease-in-out infinite;
-        }
-        .animate-float-reverse {
-          animation: floatReverse 7s ease-in-out infinite 1s;
-        }
-        .animate-spin-slow {
-          animation: spinSlow 30s linear infinite;
-        }
-      `}</style>
-
+    <section
+      id="contato"
+      className="relative overflow-hidden bg-red-50/30 py-20 px-4 lg:py-28"
+    >
       {/* ================= ÍCONES FLUTUANTES NO FUNDO ================= */}
 
       {/* 1. Tulipa Superior Esquerda */}
@@ -70,7 +47,7 @@ export function ContactSection() {
             <div className="relative w-full h-[380px] sm:h-[460px] rounded-2xl overflow-hidden shadow-md border-4 border-white bg-gray-100">
               <iframe
                 title="Localização da Floricultura"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975734273295!2d-46.65866868502223!3d-23.561324484682855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr"
+                src={site.contact.mapsEmbedUrl}
                 className="w-full h-full border-0"
                 allowFullScreen=""
                 loading="lazy"
@@ -87,7 +64,7 @@ export function ContactSection() {
               </div>
               <div>
                 <h4 className="font-serif font-bold text-sm">Venha nos visitar!</h4>
-                <p className="text-xs text-red-100 mt-0.5">Rua das Flores, 123 - Centro</p>
+                <p className="text-xs text-red-100 mt-0.5">{site.contact.address}</p>
               </div>
             </div>
           </div>

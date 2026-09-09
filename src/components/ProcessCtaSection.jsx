@@ -1,4 +1,4 @@
-import React from "react";
+import { whatsappLink } from "../config/site";
 
 import flor1 from "../assets/img/flor1.jpeg";
 import flor2 from "../assets/img/flor2.jpeg";
@@ -63,31 +63,6 @@ const steps = [
 export function ProcessCtaSection() {
   return (
     <section className="relative overflow-hidden bg-red-50/30 py-20 px-4 lg:py-28">
-      <style>{`
-        @keyframes floatSlow {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-22px) rotate(8deg); }
-        }
-        @keyframes floatReverse {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(20px) rotate(-8deg); }
-        }
-        @keyframes spinSlow {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-
-        .animate-float-slow {
-          animation: floatSlow 6s ease-in-out infinite;
-        }
-        .animate-float-reverse {
-          animation: floatReverse 7s ease-in-out infinite 1s;
-        }
-        .animate-spin-slow {
-          animation: spinSlow 30s linear infinite;
-        }
-      `}</style>
-
       {/* ÍCONES FLUTUANTES NO FUNDO CLARO */}
       <div className="absolute top-10 left-6 md:left-12 pointer-events-none z-0 animate-float-slow opacity-60">
         <svg className="w-24 h-24 md:w-32 md:h-32 text-red-400 fill-current" viewBox="0 0 100 100">
@@ -177,7 +152,7 @@ export function ProcessCtaSection() {
         {/* BOTÃO DE CTA PRINCIPAL */}
         <div className="pt-4">
           <a
-            href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20encomenda%20de%20flores."
+            href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 rounded-full bg-red-600 px-9 py-4 text-base md:text-lg font-bold text-white shadow-lg shadow-red-600/30 hover:bg-red-700 hover:shadow-xl hover:shadow-red-700/40 hover:-translate-y-1 transition-all duration-300"

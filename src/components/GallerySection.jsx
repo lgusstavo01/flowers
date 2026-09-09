@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { whatsappLink } from "../config/site";
 import flor5 from "../assets/img/flor5.jpeg";
 import flor6 from "../assets/img/flor6.jpeg";
 import flor7 from "../assets/img/flor7.jpeg";
@@ -57,7 +58,7 @@ export function GallerySection() {
       : galleryItems.filter((item) => item.category === activeTab);
 
   return (
-    <section className="bg-white py-20 px-4 lg:py-28">
+    <section id="galeria" className="bg-white py-20 px-4 lg:py-28">
       <div className="mx-auto max-w-screen-xl text-center">
         {/* Cabeçalho */}
         <div className="max-w-xl mx-auto mb-10">
@@ -103,8 +104,8 @@ export function GallerySection() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
 
-              {/* Overlay Vermelho/Escuro ao Passar o Mouse */}
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-red-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-left">
+              {/* Overlay: sempre visível no mobile, revelado no hover a partir de md */}
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-red-950/40 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 text-left">
                 <span className="text-red-400 text-xs font-bold uppercase tracking-wider mb-1">
                   {item.category}
                 </span>
@@ -113,9 +114,7 @@ export function GallerySection() {
                 </h3>
 
                 <a
-                  href={`https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostei%20do%20${encodeURIComponent(
-                    item.title
-                  )}%20da%20galeria.`}
+                  href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-xs font-bold text-white bg-red-600 px-4 py-2 rounded-full w-fit hover:bg-red-700 transition"

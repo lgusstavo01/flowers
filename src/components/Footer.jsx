@@ -1,4 +1,4 @@
-import React from "react";
+import { site, whatsappLink } from "../config/site";
 import logoMinimalista from "../assets/iv/logoMinimalista.jpeg";
 
 export function Footer() {
@@ -7,27 +7,32 @@ export function Footer() {
       <div className="mx-auto max-w-screen-xl px-4">
         {/* Grid Principal */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          
+
           {/* Coluna 1: Logo & Breve História */}
           <div className="space-y-4">
             <a href="#" className="flex items-center space-x-3">
               <img
                 src={logoMinimalista}
                 className="h-10 w-auto object-contain rounded-md"
-                alt="Logo Malu Flores"
+                alt={`Logo ${site.brand.name}`}
               />
               <span className="text-2xl font-serif font-bold text-white tracking-wide">
-                Malu <span className="text-red-500">Flores</span>
+                {site.brand.nameParts.first}{" "}
+                <span className="text-red-500">
+                  {site.brand.nameParts.highlight}
+                </span>
               </span>
             </a>
             <p className="text-stone-400 text-sm leading-relaxed">
-              Transformando sentimentos em arranjos únicos e momentos inesquecíveis. Entrega rápida de flores frescas com amor e dedicação.
+              Transformando sentimentos em arranjos únicos e momentos
+              inesquecíveis. Entrega rápida de flores frescas com amor e
+              dedicação.
             </p>
-            
+
             {/* Redes Sociais */}
             <div className="flex gap-3 pt-2">
               <a
-                href="#"
+                href={site.social.instagram}
                 className="w-10 h-10 rounded-full bg-stone-800 text-stone-300 hover:bg-red-600 hover:text-white flex items-center justify-center transition duration-300 shadow-sm"
                 aria-label="Instagram"
               >
@@ -37,7 +42,7 @@ export function Footer() {
               </a>
 
               <a
-                href="#"
+                href={site.social.facebook}
                 className="w-10 h-10 rounded-full bg-stone-800 text-stone-300 hover:bg-red-600 hover:text-white flex items-center justify-center transition duration-300 shadow-sm"
                 aria-label="Facebook"
               >
@@ -47,7 +52,7 @@ export function Footer() {
               </a>
 
               <a
-                href="https://wa.me/5500000000000"
+                href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-stone-800 text-stone-300 hover:bg-red-600 hover:text-white flex items-center justify-center transition duration-300 shadow-sm"
@@ -66,24 +71,16 @@ export function Footer() {
               Navegação
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li>
-                <a href="#home" className="hover:text-red-400 transition-colors">Início</a>
-              </li>
-              <li>
-                <a href="#sobre" className="hover:text-red-400 transition-colors">Sobre Nós</a>
-              </li>
-              <li>
-                <a href="#servicos" className="hover:text-red-400 transition-colors">Nossos Serviços</a>
-              </li>
-              <li>
-                <a href="#galeria" className="hover:text-red-400 transition-colors">Galeria</a>
-              </li>
-              <li>
-                <a href="#depoimentos" className="hover:text-red-400 transition-colors">Depoimentos</a>
-              </li>
-              <li>
-                <a href="#contato" className="hover:text-red-400 transition-colors">Contato</a>
-              </li>
+              {site.nav.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="hover:text-red-400 transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -93,18 +90,27 @@ export function Footer() {
               Funcionamento
             </h4>
             <ul className="space-y-3 text-sm text-stone-400">
-              <li className="flex justify-between border-b border-stone-800 pb-2">
-                <span>Segunda a Sexta:</span>
-                <span className="text-stone-200 font-medium">08h às 18h</span>
-              </li>
-              <li className="flex justify-between border-b border-stone-800 pb-2">
-                <span>Sábado:</span>
-                <span className="text-stone-200 font-medium">08h às 14h</span>
-              </li>
-              <li className="flex justify-between pt-1">
-                <span>Domingo & Feriados:</span>
-                <span className="text-red-400 font-medium">Sob encomenda</span>
-              </li>
+              {site.hours.map((item, index) => (
+                <li
+                  key={item.label}
+                  className={`flex justify-between ${
+                    index < site.hours.length - 1
+                      ? "border-b border-stone-800 pb-2"
+                      : "pt-1"
+                  }`}
+                >
+                  <span>{item.label}:</span>
+                  <span
+                    className={
+                      item.highlight
+                        ? "text-red-400 font-medium"
+                        : "text-stone-200 font-medium"
+                    }
+                  >
+                    {item.value}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -119,19 +125,19 @@ export function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-stone-300">Rua das Flores, 123 - Centro</span>
+                <span className="text-stone-300">{site.contact.address}</span>
               </li>
               <li className="flex items-center gap-3">
                 <svg className="w-5 h-5 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span className="text-stone-300">(00) 99999-9999</span>
+                <span className="text-stone-300">{site.contact.phoneDisplay}</span>
               </li>
               <li className="flex items-center gap-3">
                 <svg className="w-5 h-5 text-red-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="text-stone-300">contato@maluflores.com.br</span>
+                <span className="text-stone-300">{site.contact.email}</span>
               </li>
             </ul>
           </div>
@@ -140,8 +146,10 @@ export function Footer() {
 
         {/* Linha Divisória & Copyright */}
         <div className="pt-8 border-t border-stone-800 text-center text-xs text-stone-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} Malu Flores. Todos os direitos reservados.</p>
-
+          <p>
+            © {new Date().getFullYear()} {site.brand.name}. Todos os direitos
+            reservados.
+          </p>
         </div>
       </div>
     </footer>

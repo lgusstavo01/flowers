@@ -3,6 +3,7 @@ import logoCompleta from "../assets/iv/banner.jpeg";
 export function HeroSection() {
   return (
     <section
+      id="home"
       className="relative min-h-screen bg-cover bg-center bg-no-repeat flex items-center pt-20"
       // style={{
       //   backgroundImage: `url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1920&auto=format&fit=crop')`,

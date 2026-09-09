@@ -1,5 +1,7 @@
 import { useState } from "react";
-import logoMinimalista from "../assets/iv/logoMinimalista.jpeg"
+
+import { site, whatsappLink } from "../config/site";
+import logoMinimalista from "../assets/iv/logoMinimalista.jpeg";
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,23 +9,24 @@ export function NavBar() {
   return (
     <nav className="fixed top-0 start-0 z-50 w-full border-b border-red-100/80 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-        
+
         {/* Logo da Floricultura */}
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src={logoMinimalista}
             className="h-8"
-            alt="Logo da Floricultura"
+            alt={`Logo ${site.brand.name}`}
           />
           <span className="self-center whitespace-nowrap text-xl font-serif font-bold text-gray-900">
-            Malu <span className="text-red-600">Flores</span>
+            {site.brand.nameParts.first}{" "}
+            <span className="text-red-600">{site.brand.nameParts.highlight}</span>
           </span>
         </a>
 
         {/* Botão CTA Principal e Menu Hamburguer */}
         <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
           <a
-            href="https://wa.me/5500000000000"
+            href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-red-600 px-5 py-2.5 text-center text-sm font-bold text-white shadow-md shadow-red-600/30 transition-all hover:bg-red-700 hover:shadow-lg hover:shadow-red-700/40 hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-red-200"
@@ -68,55 +71,22 @@ export function NavBar() {
           id="navbar-sticky"
         >
           <ul className="flex flex-col rounded-2xl border border-red-100 bg-red-50/50 p-3 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent md:p-0 rtl:space-x-reverse">
-            <li>
-              <a
-                href="#home"
-                className="block rounded-lg px-3 py-2 text-red-600 font-semibold md:bg-transparent md:p-0"
-                aria-current="page"
-              >
-                Início
-              </a>
-            </li>
-            <li>
-              <a
-                href="#sobre"
-                className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-red-100/60 hover:text-red-600 md:p-0 md:hover:bg-transparent md:hover:text-red-600 transition-colors"
-              >
-                Sobre
-              </a>
-            </li>
-            <li>
-              <a
-                href="#servicos"
-                className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-red-100/60 hover:text-red-600 md:p-0 md:hover:bg-transparent md:hover:text-red-600 transition-colors"
-              >
-                Serviços
-              </a>
-            </li>
-            <li>
-              <a
-                href="#galeria"
-                className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-red-100/60 hover:text-red-600 md:p-0 md:hover:bg-transparent md:hover:text-red-600 transition-colors"
-              >
-                Galeria
-              </a>
-            </li>
-            <li>
-              <a
-                href="#depoimentos"
-                className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-red-100/60 hover:text-red-600 md:p-0 md:hover:bg-transparent md:hover:text-red-600 transition-colors"
-              >
-                Depoimentos
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contato"
-                className="block rounded-lg px-3 py-2 text-gray-700 hover:bg-red-100/60 hover:text-red-600 md:p-0 md:hover:bg-transparent md:hover:text-red-600 transition-colors"
-              >
-                Contato
-              </a>
-            </li>
+            {site.nav.map((link, index) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  aria-current={index === 0 ? "page" : undefined}
+                  className={
+                    index === 0
+                      ? "block rounded-lg px-3 py-2 text-red-600 font-semibold md:bg-transparent md:p-0"
+                      : "block rounded-lg px-3 py-2 text-gray-700 hover:bg-red-100/60 hover:text-red-600 md:p-0 md:hover:bg-transparent md:hover:text-red-600 transition-colors"
+                  }
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

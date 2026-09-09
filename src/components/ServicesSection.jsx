@@ -1,4 +1,4 @@
-import React from "react";
+import { whatsappLink } from "../config/site";
 
 // Lista de serviços atualizada
 const services = [
@@ -39,40 +39,10 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="relative overflow-hidden bg-red-50/30 py-24 px-4">
-      <style>{`
-        @keyframes floatSlow {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-24px) rotate(8deg); }
-        }
-        @keyframes floatReverse {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(22px) rotate(-8deg); }
-        }
-        @keyframes swingBranch {
-          0%, 100% { transform: rotate(-7deg); }
-          50% { transform: rotate(7deg); }
-        }
-        @keyframes spinSlow {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-
-        .animate-float-slow {
-          animation: floatSlow 6s ease-in-out infinite;
-        }
-        .animate-float-reverse {
-          animation: floatReverse 7s ease-in-out infinite 1s;
-        }
-        .animate-swing {
-          animation: swingBranch 5s ease-in-out infinite;
-          transform-origin: top center;
-        }
-        .animate-spin-slow {
-          animation: spinSlow 25s linear infinite;
-        }
-      `}</style>
-
+    <section
+      id="servicos"
+      className="relative overflow-hidden bg-red-50/30 py-24 px-4"
+    >
       {/* ================= ELEMENTOS DECORATIVOS ================= */}
 
       {/* 1. Tulipa Superior Esquerda */}
@@ -180,7 +150,7 @@ export function ServicesSection() {
         {/* ================= BOTÃO DO WHATSAPP ================= */}
         <div className="mt-16 text-center">
           <a
-            href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20floricultura."
+            href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 rounded-full bg-red-600 px-8 py-4 text-base md:text-lg font-bold text-white shadow-lg shadow-red-600/30 hover:bg-red-700 hover:shadow-xl hover:shadow-red-700/40 hover:-translate-y-0.5 transition-all duration-300"
