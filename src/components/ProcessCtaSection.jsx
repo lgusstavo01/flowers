@@ -22,7 +22,7 @@ const steps = [
   {
     number: "02",
     title: "Personalização",
-    description: "Escolha as flores, cores e o cartão especial que acompanhará o presente.",
+    description: "Escolha as flores, cores das flores e cor da embalagem que irão acompanhar o presente.",
     bgColor: "bg-rose-100/80",
     iconColor: "text-rose-600",
     image: flor2,
@@ -35,7 +35,7 @@ const steps = [
   {
     number: "03",
     title: "Montagem Artesanal",
-    description: "Nossa florista prepara tudo com flores frescas colhidas no dia.",
+    description: "Nossa florista prepara tudo com flores frescas colhidas na semana.",
     bgColor: "bg-red-100/80",
     iconColor: "text-red-600",
     image: flor3,

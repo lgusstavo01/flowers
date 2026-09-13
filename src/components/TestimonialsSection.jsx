@@ -29,7 +29,7 @@ export function TestimonialsSection() {
   return (
     <section
       id="depoimentos"
-      className="bg-red-50/30 py-20 px-4 lg:py-28 relative overflow-hidden"
+      className="bg-red-50/30 py-20 px-4 lg:py-20 relative overflow-hidden"
     >
       {/* Elemento Decorativo no Fundo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-100/40 rounded-full blur-3xl pointer-events-none z-0" />

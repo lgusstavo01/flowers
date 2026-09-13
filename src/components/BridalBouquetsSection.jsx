@@ -55,44 +55,44 @@ const bouquets = [
   },
 ];
 
-const includedItems = [
-  {
-    title: "Flores frescas do dia",
-    description: "Selecionamos e montamos o buquê poucas horas antes da cerimônia.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-      </svg>
-    ),
-  },
-  {
-    title: "Prova do buquê",
-    description: "Encontro prévio para alinhar formato, flores e paleta de cores com a noiva.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Buquê para o bouquet toss",
-    description: "Uma réplica menor de cortesia para o tradicional lançamento do buquê.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Entrega no local",
-    description: "Levamos o buquê até você no dia, no horário e endereço combinados.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
-      </svg>
-    ),
-  },
-];
+// const includedItems = [
+//   {
+//     title: "Flores frescas do dia",
+//     description: "Selecionamos e montamos o buquê poucas horas antes da cerimônia.",
+//     icon: (
+//       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     title: "Prova do buquê",
+//     description: "Encontro prévio para alinhar formato, flores e paleta de cores com a noiva.",
+//     icon: (
+//       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     title: "Buquê para o bouquet toss",
+//     description: "Uma réplica menor de cortesia para o tradicional lançamento do buquê.",
+//     icon: (
+//       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     title: "Entrega no local",
+//     description: "Levamos o buquê até você no dia, no horário e endereço combinados.",
+//     icon: (
+//       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+//       </svg>
+//     ),
+//   },
+// ];
 
 export function BridalBouquetsSection() {
   const [activeStyle, setActiveStyle] = useState("Todos");
@@ -105,7 +105,7 @@ export function BridalBouquetsSection() {
   return (
     <section
       id="buques-noiva"
-      className="relative overflow-hidden bg-red-50/30 py-20 px-4 lg:py-28"
+      className="relative overflow-hidden bg-red-50/30 py-20 px-4 lg:py-20"
     >
       {/* ================= ELEMENTOS DECORATIVOS ================= */}
 
@@ -221,7 +221,7 @@ export function BridalBouquetsSection() {
         </div>
 
         {/* O que está incluso */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {includedItems.map((item) => (
             <div
               key={item.title}
@@ -238,7 +238,7 @@ export function BridalBouquetsSection() {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* CTA Principal */}
         <div className="mt-16 text-center">
