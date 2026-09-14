@@ -17,7 +17,7 @@ export const site = {
     phoneDisplay: "(71) 98295-3846",
     email: "contato@maluflores.com.br",
     address:
-      "Salvador Norte Shopping - Piso L1, em frente à Melissa - Salvador/BA, 41510-000",
+      "Salvador Norte Shopping - Piso L1, em frente à Studio Z - Salvador/BA, 41510-000",
     // Embed sem chave de API (Google Maps aceita ?q=...&output=embed em iframe).
     mapsEmbedUrl:
       "https://www.google.com/maps?q=Salvador%20Norte%20Shopping%2C%20Salvador%20-%20BA%2C%2041510-000&z=16&hl=pt-BR&output=embed",
