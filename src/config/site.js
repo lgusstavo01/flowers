@@ -24,9 +24,8 @@ export const site = {
   },
 
   hours: [
-    { label: "Segunda a Sexta", value: "08h às 18h" },
-    { label: "Sábado", value: "08h às 14h" },
-    { label: "Domingo & Feriados", value: "Sob encomenda", highlight: true },
+    { label: "Segunda a Sábado", value: "09h às 22h" },
+    { label: "Domingo", value: "13h às 21h" },
   ],
 
   social: {
