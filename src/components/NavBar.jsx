@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { site, whatsappLink } from "../config/site";
-import logoMinimalista from "../assets/iv/logoMinimalista.jpeg";
+import logoMinimalista from "../assets/iv/logoMinimalista.webp";
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);

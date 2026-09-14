@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 import { whatsappLink } from "../config/site";
-import flor5 from "../assets/img/flor5.jpeg";
-import flor6 from "../assets/img/flor6.jpeg";
-import flor7 from "../assets/img/flor7.jpeg";
-import flor9 from "../assets/img/flor9.jpeg";
-import arranjo1 from "../assets/img/arranjo1.jpeg";
-import arranjo2 from "../assets/img/arranjo2.jpeg";
+import flor5 from "../assets/img/flor5.webp";
+import flor6 from "../assets/img/flor6.webp";
+import flor7 from "../assets/img/flor7.webp";
+import flor9 from "../assets/img/flor9.webp";
+import arranjo1 from "../assets/img/arranjo1.webp";
+import arranjo2 from "../assets/img/arranjo2.webp";
 
 const categories = ["Todos", "Buquês", "Arranjos", "Cestas"];
 

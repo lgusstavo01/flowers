@@ -1,5 +1,5 @@
 import { site, whatsappLink } from "../config/site";
-import logoMinimalista from "../assets/iv/logoMinimalista.jpeg";
+import logoMinimalista from "../assets/iv/logoMinimalista.webp";
 
 export function Footer() {
   return (

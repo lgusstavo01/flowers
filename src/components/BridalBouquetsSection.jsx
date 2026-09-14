@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 import { whatsappLink } from "../config/site";
-import flor8 from "../assets/img/flor8.jpeg";
-import flor10 from "../assets/img/flor10.jpeg";
-import flor11 from "../assets/img/flor11.jpeg";
-import flor12 from "../assets/img/flor12.jpeg";
-import flor13 from "../assets/img/flor13.jpeg";
-import flor14 from "../assets/img/flor14.jpeg";
+import flor8 from "../assets/img/flor8.webp";
+import flor10 from "../assets/img/flor10.webp";
+import flor11 from "../assets/img/flor11.webp";
+import flor12 from "../assets/img/flor12.webp";
+import flor13 from "../assets/img/flor13.webp";
+import flor14 from "../assets/img/flor14.webp";
 
 const styles = ["Todos", "Clássico", "Silvestre", "Romântico", "Tropical"];
 

@@ -1,4 +1,4 @@
-import logoCompleta from "../assets/iv/banner.jpeg";
+import logoCompleta from "../assets/iv/banner.webp";
 
 export function HeroSection() {
   return (

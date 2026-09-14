@@ -1,9 +1,9 @@
 import { whatsappLink } from "../config/site";
 
-import flor1 from "../assets/img/flor1.jpeg";
-import flor2 from "../assets/img/flor2.jpeg";
-import flor3 from "../assets/img/flor3.jpeg";
-import flor4 from "../assets/img/flor4.jpeg";
+import flor1 from "../assets/img/flor1.webp";
+import flor2 from "../assets/img/flor2.webp";
+import flor3 from "../assets/img/flor3.webp";
+import flor4 from "../assets/img/flor4.webp";
 
 const steps = [
   {

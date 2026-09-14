@@ -1,5 +1,5 @@
-import cardImg from "../assets/iv/card.jpeg";
-import bannerImg from "../assets/iv/banner.jpeg";
+import cardImg from "../assets/iv/card.webp";
+import bannerImg from "../assets/iv/banner.webp";
 
 export function AboutSection() {
   return (
