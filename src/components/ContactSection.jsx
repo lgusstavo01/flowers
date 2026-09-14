@@ -1,6 +1,46 @@
+import { useState } from "react";
 import { site } from "../config/site";
 
+const INITIAL_FORM = { name: "", email: "", phone: "", message: "" };
+
 export function ContactSection() {
+  const [form, setForm] = useState(INITIAL_FORM);
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [errorMessage, setErrorMessage] = useState("");
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
+
+    const fallbackMessage =
+      "Não foi possível enviar a mensagem. Tente novamente ou chame no WhatsApp.";
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.error || fallbackMessage);
+      }
+
+      setStatus("success");
+      setForm(INITIAL_FORM);
+    } catch {
+      setStatus("error");
+      setErrorMessage(fallbackMessage);
+    }
+  }
+
   return (
     <section
       id="contato"
@@ -79,11 +119,15 @@ export function ContactSection() {
               Vamos criar algo <span className="text-red-600">incrível juntas!</span>
             </h2>
 
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <input
                     type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
                     placeholder="Seu Nome"
                     className="w-full rounded-xl bg-white border border-red-100/80 p-4 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition shadow-sm"
                   />
@@ -91,6 +135,10 @@ export function ContactSection() {
                 <div>
                   <input
                     type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
                     placeholder="Seu E-mail"
                     className="w-full rounded-xl bg-white border border-red-100/80 p-4 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition shadow-sm"
                   />
@@ -100,6 +148,9 @@ export function ContactSection() {
               <div>
                 <input
                   type="text"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
                   placeholder="Telefone / WhatsApp"
                   className="w-full rounded-xl bg-white border border-red-100/80 p-4 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition shadow-sm"
                 />
@@ -108,16 +159,30 @@ export function ContactSection() {
               <div>
                 <textarea
                   rows="4"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  required
                   placeholder="Detalhes da mensagem ou pedido..."
                   className="w-full rounded-xl bg-white border border-red-100/80 p-4 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition shadow-sm resize-none"
                 ></textarea>
               </div>
 
+              {status === "success" && (
+                <p className="text-sm font-medium text-green-600">
+                  Mensagem enviada! Em breve entraremos em contato.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm font-medium text-red-600">{errorMessage}</p>
+              )}
+
               <button
                 type="submit"
-                className="inline-flex items-center justify-center rounded-full bg-red-600 px-8 py-4 text-sm md:text-base font-bold uppercase tracking-wider text-white shadow-lg shadow-red-600/30 hover:bg-red-700 hover:shadow-red-700/40 hover:-translate-y-0.5 transition-all duration-300"
+                disabled={status === "loading"}
+                className="inline-flex items-center justify-center rounded-full bg-red-600 px-8 py-4 text-sm md:text-base font-bold uppercase tracking-wider text-white shadow-lg shadow-red-600/30 hover:bg-red-700 hover:shadow-red-700/40 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
               >
-                Enviar Mensagem
+                {status === "loading" ? "Enviando..." : "Enviar Mensagem"}
               </button>
             </form>
           </div>
